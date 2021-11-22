@@ -19,11 +19,11 @@ Route::get('/', function () {
 // ::get URLを直接呼び出す
 // post formメソッドを使って呼び出す
 Route::get('/archives/', function(){
-    return '記事一覧';
+    return view('archives.index');
 });
 
 Route::get('/archives/{category}/', function($category){
-    return $category . 'の一覧';
+    return view('archives.category', ['category' => $category]);
 });
 
 Route::post('/join/', function(){
